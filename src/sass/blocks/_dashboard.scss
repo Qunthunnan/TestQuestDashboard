@@ -1,0 +1,159 @@
+.dashboard {
+    padding: 41px 95px 258px 71px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    &__label {
+        font-weight: 500;
+        font-size: 24px;
+        padding-bottom: 51px;
+    }
+    &__window {
+        padding: 30px 44px 40px 38px;
+        background-color: white;
+        border-radius: 30px;
+        flex: 1 1;
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            &-text-title {
+                font-size: 22px;
+                font-weight: 600;
+            }
+            &-text-subtitle {
+                margin-top: 7px;
+                font-weight: 400;
+                font-size: 14px;
+                color: #16C098;
+            }
+            &-search {
+                position: relative;
+                input {
+                    outline: none;
+                    border: none;
+                    background-color: #F9FBFF;
+                    border-radius: 10px;
+                    font-size: 12px;
+                    font-weight: 400;
+                    width: 216px;
+                    height: 38px;
+                    padding: 5px 5px 5px 40px;
+                }
+                svg {
+                    position: absolute;
+                    left: 11px;
+                    top: 8px;
+                }
+            }
+        }
+
+        &-customers {
+            position: relative;
+            &::after {
+                content: '';
+                position: absolute;
+                top: 68px;
+                left: -38px;
+                display: block;
+                width: calc(100% + 44px + 38px);
+                height: 1px;
+                background-color: #EEEEEE;
+            }
+        }
+
+        &-result {
+            .dashboard__window-customers-name, .dashboard__window-customers-company, .dashboard__window-customers-number, .dashboard__window-customers-email, .dashboard__window-customers-country {
+                font-size: 14px;
+                font-weight: 500;
+                border-bottom: 1px solid #EEE;
+                padding: 25px 0px;
+                &--placeholder {
+                    padding: 25px 0px;
+                    color: #B5B7C0;
+                }
+            }
+            .dashboard__window-customers-status {
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid #EEE;
+                &-active, &-inactive {
+                    padding: 4px 0px;
+                    border-radius: 4px;
+                    width: 80px;
+                    text-align: center;
+                }
+                &-active {
+                    color: $active-memberText-color;
+                    background-color: $active-memberBg-color;
+                    border: 1px solid $active-memberText-color;
+                }
+                &-inactive {
+                    color: $inactive-memberText-color;
+                    background-color: $inactive-memberBg-color;
+                    border: 1px solid $inactive-memberText-color;
+                }
+            }
+            .dashboard__window-customers-status--placeholder {
+                padding: 25px 0px;
+                color: #B5B7C0;
+            }
+            display: grid;
+            grid-template: 69px/repeat(6, auto);
+            grid-auto-rows: 69px;
+        }
+
+        &-footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 0px 0px 0px;
+            &-dataCount {
+                color: #B5B7C0;
+                font-weight: 500;
+                font-size: 14px;
+            }
+
+            &-pagination {
+                display: flex;
+                &-page, &-gap, &-leftArr {
+                    margin-right: 12px;
+                    &:last-child() {
+                        margin-right: 0px;
+                    }
+                }
+
+                &-page, &-rightArr, &-leftArr {
+                    cursor: pointer;
+                    border-radius: 4px;
+                    height: 24px;
+                    width: 26px;
+                    padding: 2px 0px;
+                    border: none;
+                    outline: none;
+                    text-align: center;
+                    background-color: #F5F5F5;
+                    border: 1px solid #EEE;
+                    color: #404B52;
+                    transition: all 0.5s;
+                    &:hover {
+                        background-color: #e0e0e0;
+                    }
+                    &--active {
+                        cursor: unset;
+                        color: #FFF;
+                        background-color: $active-menu-color;
+                        &:hover {
+                            background-color: $active-menu-color;
+                        }
+                    }
+                }
+
+                
+
+                .dashboard__window-footer-pagination-gap {
+                    color: black;
+                }
+            }
+        }
+
+    }
+}
