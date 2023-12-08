@@ -1,0 +1,90 @@
+.sidePanel {
+    background-color: white;
+    padding: 37px 28px 76px 28px;
+    width: 306px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__logo {
+        display: flex;
+        font-size: 26px;
+        font-weight: 600;
+        svg {
+            margin-right: 8px;
+        }
+        &-ver {
+            align-items: flex-end;
+            display: flex;
+            font-size: 10px;
+            font-weight: 500;
+            color: #838383;
+            margin-left: 5px;
+            line-height: 27px;
+        }
+    }
+
+    &__menu {
+        margin-top: 64px;
+        &-item {
+            svg {
+                margin-right: 14px;
+            }
+            &-arrow {
+                margin-right: 0;
+                svg {
+                    margin-right: 0;
+                }
+                margin-left: auto;
+            }
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.5s;
+            margin: 7px 0;
+            display: flex;
+            padding: 10px;
+            color: #9197B3;
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 500;
+            &:first-child() {
+                margin: 0 0 7px 0;
+            }
+            &:last-child() {
+                margin: 7px 0 0 0;
+            }
+            &:hover {
+                background-color: #eeeeee;
+            }
+            &--active {
+                color: white;
+                background-color: $active-menu-color;
+                &:hover {
+                    background-color: $active-menu-color;
+                }
+            }
+        }
+    }
+
+    &__user {
+        display: flex;
+        margin-top: auto;
+        img {
+            border-radius: 100%;
+            width: 42px;
+            object-fit: contain;
+        }
+        &-sideInfo {
+            margin-left: 12px;
+            &-name {
+                font-size: 14px;
+                font-weight: 500;
+            }
+            &-position {
+                color: #757575;
+                font-size: 12px;
+                font-weight: 400;
+            }
+        }
+    }
+}
