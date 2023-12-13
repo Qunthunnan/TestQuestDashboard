@@ -6,10 +6,11 @@ html(lang="en")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        script(src='js/font-loader-min.js')
         link(rel="stylesheet", href="css/style.min.css")
         title Dashboard
     body 
-        include ../blocks/_sidePanel.pug
         block content
+        include ../blocks/_sidePanel.pug
         script(defer src="js/script-min.js")
         

@@ -9,6 +9,7 @@ import imagemin, { mozjpeg } from 'gulp-imagemin';
 import pug from 'gulp-pug';
 import minify from 'gulp-minify';
 import flatten from 'gulp-flatten';
+import ttf2woff from 'gulp-ttf2woff';
 
 const isPartial = (file) => file.relative.startsWith('_');
 
@@ -60,9 +61,10 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('fonts', function () {
-    return gulp.src("src/fonts/**/*")
-        .pipe(gulp.dest("dist/fonts"))
-        .pipe(browserSync.stream());
+    return gulp.src("src/fonts/*.ttf")
+    .pipe(ttf2woff())
+    .pipe(gulp.dest('dist/fonts/'))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('icons', function () {
