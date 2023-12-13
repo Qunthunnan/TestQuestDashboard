@@ -1,6 +1,6 @@
 .sidePanel {
     background-color: #fff;
-    padding: 37px 28px 118px 28px;
+    padding: 37px 28px 117px 28px;
     width: 386px;
     min-height: 100vh;
     display: flex;
@@ -8,37 +8,32 @@
     box-shadow: 0px 10px 60px 0px rgba(226, 236, 249, 0.50);
 
     &__logo {
+        h1 {
+            font-size: 26px;
+            font-weight: 600;
+            display: inline;
+        }
         display: flex;
-        font-size: 26px;
-        font-weight: 600;
         svg {
             margin-right: 8px;
         }
-        &-ver {
-            align-items: flex-end;
-            display: flex;
-            font-size: 10px;
-            font-weight: 500;
-            color: #838383;
-            margin-left: 5px;
-            line-height: 27px;
-        }
+    }
+
+    &__ver {
+        align-items: flex-end;
+        display: flex;
+        font-size: 10px;
+        font-weight: 500;
+        color: #838383;
+        margin-left: 5px;
+        line-height: 27px;
     }
 
     &__menu {
-        margin-top: 50px;
+        margin-top: 53px;
         &-item {
             svg {
                 margin-right: 14px;
-            }
-            &-arrow {
-                display: flex;
-                align-items: center;
-                margin-right: 0;
-                svg {
-                    margin-right: 0;
-                }
-                margin-left: auto;
             }
             border-radius: 8px;
             cursor: pointer;
@@ -69,6 +64,16 @@
         }
     }
 
+    &__arrow {
+        display: flex;
+        align-items: center;
+        margin-right: 0;
+        svg {
+            margin-right: 0;
+        }
+        margin-left: auto;
+    }
+
     &__user {
         display: flex;
         margin-top: auto;
@@ -77,16 +82,107 @@
             width: 42px;
             object-fit: contain;
         }
-        &-sideInfo {
-            margin-left: 12px;
-            &-name {
-                font-size: 14px;
-                font-weight: 500;
+    }
+
+    &__sideInfo {
+        margin-left: 12px;
+    }
+
+    &__name {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    &__position {
+        color: #757575;
+        font-size: 12px;
+        font-weight: 400;
+    }
+}
+
+@media (max-width: 1200px) {
+    .sidePanel {
+        width: 300px;
+        padding: 37px 9px 117px 9px;
+        &__logo {
+            h1 {
+                font-size: 24px;
+                line-height: 42px;
             }
-            &-position {
-                color: #757575;
-                font-size: 12px;
-                font-weight: 400;
+        }
+
+        &__ver {
+            line-height: 33px;
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    .sidePanel {
+        width: 250px;
+        padding: 37px 9px 117px 9px;
+        &__logo {
+            h1 {
+                font-size: 19px;
+                line-height: 42px;
+            }
+            svg {
+                margin-right: 5px;
+            }
+        }
+
+        &__ver {
+            font-size: 9px;
+            line-height: 33px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .sidePanel {
+        position: absolute;
+        transition: all 0.5s;
+        padding: 37px 9px 412px 9px;
+        left: -250px;
+        height: 100%;
+        z-index: 3;
+        box-shadow: none;
+
+        &--active {
+            left: 0px;
+            box-shadow: 0 27px 72px 0 rgba(50,50,50,.5);
+            span {
+                &:first-child {
+                    transform: rotate(45deg);
+                    transform-origin: center;
+                    height: 3px;
+                }
+                &:nth-child(2) {
+                    display: none;
+                }
+                &:last-child {
+                    margin-top: 0;
+                    transform-origin: center;
+                    transform: rotate(-45deg) translate(0px, -1.5px);
+                    height: 3px;
+                }
+            }
+        }
+
+        &__mobile-button {
+            height: 30px;
+            transition: all 0.5s;
+            position: absolute;
+            right: -44px;
+            top: 14px;
+            span {
+                display: block;
+                background-color: #000;
+                width: 30px;
+                height: 2px;
+                margin-top: 2px;
+                &:first-child {
+                    margin-top: 0;
+                }
             }
         }
     }
