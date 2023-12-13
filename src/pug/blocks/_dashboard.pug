@@ -7,29 +7,29 @@ section.dashboard
                 h2.dashboard__window-header-text-title All Customers
                 h3.dashboard__window-header-text-subtitle Active Members
             .dashboard__window-header-search
-                input(type="text" placeholder = "Search")
-                svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none')
-                    path(d='M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z' stroke='#7E7E7E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
-                    path(d='M21 21L16.65 16.65' stroke='#7E7E7E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                .dashboard__window-header-search-input
+                    input(type="text" placeholder = "Search")
+                    svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none')
+                        path(d='M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z' stroke='#7E7E7E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+                        path(d='M21 21L16.65 16.65' stroke='#7E7E7E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
         .dashboard__window-customers 
-            .dashboard__window-result
-                .dashboard__window-customers-name--placeholder Customer Name
-                .dashboard__window-customers-company--placeholder Company
-                .dashboard__window-customers-number--placeholder Phone Number
-                .dashboard__window-customers-email--placeholder Email
-                .dashboard__window-customers-country--placeholder Country
-                .dashboard__window-customers-status--placeholder Status
-                each value in customers 
-                    .dashboard__window-customers-name #{value.name}
-                    .dashboard__window-customers-company #{value.company}
-                    .dashboard__window-customers-number #{value.phoneNumber}
-                    .dashboard__window-customers-email #{value.email}
-                    .dashboard__window-customers-country #{value.country}
-                    .dashboard__window-customers-status 
-                        if value.status
-                            .dashboard__window-customers-status-active Active
-                        else
-                            .dashboard__window-customers-status-inactive Inactive
+            .dashboard__window-customers-name.dashboard__window-customers-name--placeholder Customer Name
+            .dashboard__window-customers-company.dashboard__window-customers-company--placeholder Company
+            .dashboard__window-customers-number.dashboard__window-customers-number--placeholder Phone Number
+            .dashboard__window-customers-email.dashboard__window-customers-email--placeholder Email
+            .dashboard__window-customers-country.dashboard__window-customers-country--placeholder Country
+            .dashboard__window-customers-status.dashboard__window-customers-status--placeholder Status
+            each value in customers 
+                .dashboard__window-customers-name #{value.name}
+                .dashboard__window-customers-company #{value.company}
+                .dashboard__window-customers-number #{value.phoneNumber}
+                .dashboard__window-customers-email #{value.email}
+                .dashboard__window-customers-country #{value.country}
+                .dashboard__window-customers-status 
+                    if value.status
+                        .dashboard__window-customers-status-active Active
+                    else
+                        .dashboard__window-customers-status-inactive Inactive
         footer.dashboard__window-footer 
             .dashboard__window-footer-dataCount Showing data 1 to 8 of 
                 if dataCount > 1000

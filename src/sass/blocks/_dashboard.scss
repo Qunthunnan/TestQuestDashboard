@@ -1,21 +1,24 @@
 .dashboard {
-    padding: 41px 95px 258px 71px;
+    padding: 41px 78px 299px 71px;
     width: 100%;
     display: flex;
     flex-direction: column;
     &__label {
-        font-weight: 500;
-        font-size: 24px;
+        h2 {
+            font-weight: 500;
+            font-size: 24px;
+        }
         padding-bottom: 51px;
     }
     &__window {
-        padding: 30px 44px 40px 38px;
-        background-color: white;
+        background-color: #fff;
         border-radius: 30px;
+        box-shadow: 0px 10px 60px rgba(226, 236, 249, 0.50);
         flex: 1 1;
         &-header {
             display: flex;
             justify-content: space-between;
+            padding: 29px 53px 6px 38px;
             &-text-title {
                 font-size: 22px;
                 font-weight: 600;
@@ -27,57 +30,84 @@
                 color: #16C098;
             }
             &-search {
-                position: relative;
-                input {
-                    outline: none;
-                    border: none;
-                    background-color: #F9FBFF;
-                    border-radius: 10px;
-                    font-size: 12px;
-                    font-weight: 400;
-                    width: 216px;
-                    height: 38px;
-                    padding: 5px 5px 5px 40px;
+                display: flex;
+                align-items: center;
+                &-input {
+                    position: relative;
+                    input {
+                        outline: none;
+                        border: none;
+                        background-color: #F9FBFF;
+                        border-radius: 10px;
+                        font-size: 12px;
+                        font-weight: 400;
+                        width: 216px;
+                        height: 38px;
+                        padding: 5px 5px 5px 40px;
+                    }
                 }
                 svg {
                     position: absolute;
-                    left: 11px;
+                    left: 7px;
                     top: 8px;
                 }
             }
         }
 
         &-customers {
-            position: relative;
-            &::after {
-                content: '';
-                position: absolute;
-                top: 68px;
-                left: -38px;
-                display: block;
-                width: calc(100% + 44px + 38px);
-                height: 1px;
-                background-color: #EEEEEE;
-            }
-        }
-
-        &-result {
+            display: grid;
+            grid-template: 69px/repeat(6, auto);
+            grid-auto-rows: 69px;
+            column-gap: 47px;
+            padding: 0px 38px;
             .dashboard__window-customers-name, .dashboard__window-customers-company, .dashboard__window-customers-number, .dashboard__window-customers-email, .dashboard__window-customers-country {
+                position: relative;
                 font-size: 14px;
                 font-weight: 500;
-                border-bottom: 1px solid #EEE;
-                padding: 25px 0px;
+                padding: 26px 0px;
                 &--placeholder {
-                    padding: 25px 0px;
+                    padding: 33px 0 0 0px;
                     color: #B5B7C0;
+                    &::after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        bottom: 1px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        height: 0.5px;
+                        width: calc(100% + 23.5px + 53px);
+                        background-color: #EEE;
+                    }
                 }
             }
+
+                
             .dashboard__window-customers-status {
                 display: flex;
                 align-items: center;
-                border-bottom: 1px solid #EEE;
+                &--placeholder {
+                    position: relative;
+                    text-align: center;
+                    display: block;
+                    font-size: 14px;
+                    font-weight: 500;
+                    padding: 33px 0 0 0px;
+                    color: #B5B7C0;
+                    &::after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        bottom: 1px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        height: 0.5px;
+                        width: calc(100% + 23.5px + 53px);
+                        background-color: #EEE;
+                    }
+                }
                 &-active, &-inactive {
-                    padding: 4px 0px;
+                    padding: 2px 0;
                     border-radius: 4px;
                     width: 80px;
                     text-align: center;
@@ -93,19 +123,14 @@
                     border: 1px solid $inactive-memberText-color;
                 }
             }
-            .dashboard__window-customers-status--placeholder {
-                padding: 25px 0px;
-                color: #B5B7C0;
-            }
-            display: grid;
-            grid-template: 69px/repeat(6, auto);
-            grid-auto-rows: 69px;
         }
+
+
 
         &-footer {
             display: flex;
             justify-content: space-between;
-            padding: 30px 0px 0px 0px;
+            padding: 31px 40px 40px 38px;
             &-dataCount {
                 color: #B5B7C0;
                 font-weight: 500;
@@ -115,7 +140,7 @@
             &-pagination {
                 display: flex;
                 &-page, &-gap, &-leftArr {
-                    margin-right: 12px;
+                    margin-right: 11px;
                     &:last-child() {
                         margin-right: 0px;
                     }
@@ -150,7 +175,7 @@
                 
 
                 .dashboard__window-footer-pagination-gap {
-                    color: black;
+                    color: #000;
                 }
             }
         }
