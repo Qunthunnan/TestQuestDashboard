@@ -5,7 +5,7 @@
     flex-direction: column;
     order: 2;
     &__label {
-        padding-bottom: 51px;
+        padding: 0 0 51px 0;
     }
 
     &__greetings {
@@ -153,7 +153,7 @@
 
     &__data_count {
         color: #B5B7C0;
-        margin-top: 5px;
+        margin: 5px 0 0 0;
         font-weight: 500;
         font-size: 14px;
     }
@@ -240,7 +240,7 @@
             h2 {
                 font-size: 22px;
             }
-            padding-bottom: 15px;
+            padding: 0 0 15px 0;
         }
 
         &__title {

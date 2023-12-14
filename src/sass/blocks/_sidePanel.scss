@@ -74,12 +74,12 @@
         svg {
             margin: 0 0 0 0;
         }
-        margin-left: auto;
+        margin: 0 0 0 auto;
     }
 
     &__user {
         display: flex;
-        margin-top: auto;
+        margin: auto 0 0 0;
     }
     &__avatar {
         width: 42px;
