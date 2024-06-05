@@ -1,6 +1,8 @@
 .dashboard
     header.dashboard__label
-        h2.dashboard__greetings Hello #{userName} 👋🏼,
+        h2.dashboard__greetings Hello 
+            span.dashboard__username.jsUsername Evano
+            |  👋🏼,
     .dashboard__window 
         header.dashboard__header
             .dashboard__text 
@@ -8,29 +10,32 @@
                 h3.dashboard__subtitle Active Members
             .dashboard__search
                 .dashboard__search_input
-                    input(type="text" id="search" placeholder = "Search")
-                    label(for="search") 
+                    input(type="text" id="search" placeholder = "Search").jsSearchInput
+                    label(for="search").jsSearchLabel 
                     svg(xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none')
                         path(d='M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z' stroke='#7E7E7E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
                         path(d='M21 21L16.65 16.65' stroke='#7E7E7E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
-        .dashboard__customers 
-            .dashboard__name.dashboard__name--placeholder Customer Name
-            .dashboard__company.dashboard__company--placeholder Company
-            .dashboard__number.dashboard__number--placeholder Phone Number
-            .dashboard__email.dashboard__email--placeholder Email
-            .dashboard__country.dashboard__country--placeholder Country
-            .dashboard__status.dashboard__status--placeholder Status
+        ul.dashboard__customers 
+            li.dashboard__data
+                .dashboard__name.dashboard__name--placeholder Customer Name
+                .dashboard__company.dashboard__company--placeholder Company
+                .dashboard__number.dashboard__number--placeholder Phone Number
+                .dashboard__email.dashboard__email--placeholder Email
+                .dashboard__country.dashboard__country--placeholder Country
+                .dashboard__status.dashboard__status--placeholder Status
             each value in customers 
-                .dashboard__name #{value.name}
-                .dashboard__company #{value.company}
-                .dashboard__number #{value.phoneNumber}
-                .dashboard__email #{value.email}
-                .dashboard__country #{value.country}
-                .dashboard__status 
+                li.dashboard__data
+                    .dashboard__name(title=`${value.name}`) #{value.name}
+                    .dashboard__company(title=`${value.company}`) #{value.company}
+                    .dashboard__number(title=`${value.phoneNumber}`) 
+                        a(href=`tel:${value.phoneNumber}`).dashboard__number_link #{value.phoneNumber}
+                    .dashboard__email(title=`${value.email}`) 
+                        a(href=`mailto:${value.email}`).dashboard__email_link #{value.email}
+                    .dashboard__country(title=`${value.country}`) #{value.country} 
                     if value.status
-                        .dashboard__status--active Active
+                        .dashboard__status.dashboard__status--active Active
                     else
-                        .dashboard__status--inactive Inactive
+                        .dashboard__status.dashboard__status--inactive Inactive
         footer.dashboard__footer 
             .dashboard__data_count Showing data 1 to 8 of 
                 if dataCount > 1000
